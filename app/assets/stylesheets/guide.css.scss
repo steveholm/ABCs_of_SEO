@@ -2,6 +2,7 @@
 
 $white: #fff;
 $black: #000;
+$border: #ccc;
 $dark-grey: #333;
 $light-grey: #E0E0E0;
 $blue: #404853;
@@ -15,7 +16,7 @@ $orange: #DFA054;
 // ------Style Varibales------ //
 
 $light-text-shadow: 0 1px 0 white;
-$dark-text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+$dark-text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
 
 // ------End Style Varibales------ //
 
@@ -26,7 +27,7 @@ body {
 	background: url('bg/png.png');
 }
 
-.container_fluid {
+.container {
 	max-width: 1200px;
 	padding-left: 0px;
 	padding-right: 0px;
@@ -34,8 +35,33 @@ body {
 
 aside, .span4 {
 	background: $blue;
+	color: $white;
 	float: left;
 	height: 800px;
 	margin-left: 0px;
+	padding-top: 20px;
+	position: fixed;
+
+	h4 {
+		font-style: italic;
+		font-weight: normal;
+		text-align: center;
+		text-shadow: $dark-text-shadow;
+	}
+
+	h1 {
+		border-bottom: 4px double $border;
+		font-size: 58.5px;
+		margin-right: auto;
+		margin-left: auto;
+		padding-bottom: 20px;
+		text-align: center;
+		text-shadow: $dark-text-shadow;
+		width: 225px;
+	}
+}
+
+.toc {
+	color: white;
 }
 

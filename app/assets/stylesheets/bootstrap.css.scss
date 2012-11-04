@@ -173,7 +173,7 @@ a {
 }
 
 a:hover {
-  color: #005580;
+  color: #E0E0E0;
   text-decoration: underline;
 }
 
@@ -5698,7 +5698,7 @@ a.badge:hover {
 
 .accordion-group {
   margin-bottom: 2px;
-  border: 1px solid #e5e5e5;
+  // border: 1px solid #e5e5e5;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
@@ -5714,12 +5714,13 @@ a.badge:hover {
 }
 
 .accordion-toggle {
+  color: white;
   cursor: pointer;
 }
 
 .accordion-inner {
-  padding: 9px 15px;
-  border-top: 1px solid #e5e5e5;
+  padding: 9px 33px;
+  // border-top: 1px solid #e5e5e5;
 }
 
 .carousel {

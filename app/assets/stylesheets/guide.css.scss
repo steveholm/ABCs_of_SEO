@@ -1,0 +1,40 @@
+// ------Color Variables------ //
+
+$white: #fff;
+$black: #000;
+$dark-grey: #333;
+$light-grey: #E0E0E0;
+$blue: #404853;
+$light_blue: #8C9198;
+$green: #8EC63F;
+$orange: #DFA054;
+
+// ------End Color Variables------ //
+
+
+// ------Style Varibales------ //
+
+$light-text-shadow: 0 1px 0 white;
+$dark-text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+
+// ------End Style Varibales------ //
+
+
+// -------On to the Styles for the Guide------//
+
+body {
+	background: url('bg/png.png');
+}
+
+.container-fluid {
+	max-width: 1200px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+aside, .span4 {
+	background: $blue;
+	float: left;
+	height: 800px;
+	margin-left: 0px;
+}

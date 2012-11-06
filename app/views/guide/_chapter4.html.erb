@@ -1,23 +1,105 @@
 			<article id="chapter4">
-				<h2>Chapter 4: Onsite Optimization</h2>
+				<h2>Chapter 4: Ensuring Your Website is Indexed</h2>
 				
 				<section id="chapter_overview">
 					<h3>Chapter Overview</h3>
-					<p>Onsite optimization is the easiest place to start because it involves making changes to the code and content of your website, which is in your control and does not depend on the cooperation of others.  A general principle that you should remember is that repetitive, overuse of your keywords will not increase your ranking and will likely result in penalties from the search engines.  The content of every aspect of your webpage, from title tag, meta description, and general content should be well-written and organized with the purpose of informing and motivating the reader/customer.  There are pieces of code that can be used to identify or highlight this content for the search engine, including title tags, meta description tags, image tags, and heading tags.  When creating these tags, keep in mind the recommendations in the main body of this chapter relating to length and keyword density.  A clean URL structure will also be beneficial to the search engines in appropriately indexing your content.  Internal links in your website point from one page of your site to another and assist the reader in navigating your site and finding the right information quickly.  Internal links should include the exact keywords you are targeting.</p>
+					<p>If a page of your website is not in the search engine’s index, the page is never going to be found through an organic search, so you want your page to be as index-friendly as possible.  The beginning of this chapter will show you how to obtain an estimate of where you are by checking how many pages have been indexed.  It will help you understand how to use page inclusion techniques, i.e. a sitemap and robots.txt, to encourage the search engine to index your website.  Most importantly, the final section will explain page exclusion barriers that must be removed to ensure that the search engines are not blocked from indexing your site.</p>
 				</section>
 
 				<section id="chapter4-1">
-					<h4></h4>
-					<p></p>
+					<h4>Evaluating a Website’s Index</h4>
+					<p>The most common way to check indexing is by going to the search engine and writing “site” in front of the domain in question.  This method is not exactly accurate, and the same search may return varied results in the same day or even hour.  However, it is a fast and simple way to get an estimate of the extent to which a domain is indexed, and you can track this estimated data over time.</p>
+
+					<section id="example">
+						<h6>Example of Evaluating a Website’s Index:</h6>
+						<ol>
+							<li>To evaluate the indexing of <em>youthmma.com</em>, go to google.com</li>
+							<li>Type site: <em>youthmma.com</em></li>
+							<li>You will see the number of total indexed pages right below the search area.  Under the Google logo, the term “Search” is in red, and the total index pages result is in grey across from Search. In this example, the number of indexed pages on the root domain youthmma.com in Google is 225.</li>
+						</ol>
+						<img src="#">
+					</section>
+				</section>
+
+				<section id="chapter4-2">
+					<h4>What is Robots.txt?</h4>
+					<p>The Robots.txt is the first place the search engines go when they start to read the code on the page. The Robots.txt will tell the search engine robot that is crawling the page whether it is allowed to visit the website. The search engine robot is identified as “User-Agent.”  It is possible to give directions to specific robots, but that is beyond the scope of this guide.  The following symbols are helpful in understanding Robots.txt:</p>
+
+					<section class="definition">
+						<h5>Definitions:</h5> <!-- style with a pseudo selector: any <h5> nested within a section w/ a class of "definition" -->
+						<ul>
+							<li><strong>User-Agent: *</strong> - this phrase signals the search engine to read all</li>
+							<li><strong>Allow:/</strong> - this means “allow everything”</li>
+							<li><strong>Disallow:/</strong> - this means “disallow everything” (block search engines)</li>
+						</ul>
+					</section>
+				</section>
+
+				<section id="chapter4-3">
+					<h4>Page Inclusion – XML Sitemap</h4>
+					<p>Page inclusion techniques encourage the search engines to add pages to their index. The most common tool to facilitate this request is in an XML Sitemap, which doesn’t guarantee that the webpage will be included in the search index, but does allow the search engines to crawl the page more effectively.  An XML Sitemap is a file that has all of the webpages you would like the search engines to place in their index, and there are several different kinds of XML sitemaps including ones for news, video, and images.  You can utilize one of several free tools online, such as XML-sitemaps.com, to build an XML sitemap that will be read by all of the major search engines.</p>
+
+					<p>An example Robots.txt that is good because it will encourage indexing and identify your XML Sitemap is as follows:</p>
+					<ul>
+						<li>User-Agent: *</li>
+						<li>Allow: /</li>
+						<li>sitemap: http://www.boostability.com/sitemap.xml</li>
+					</ul>
+				</section>
+
+				<section id="chapter4-4">
+					<h4>Page Exclusion – Robots.txt Disallow and Noindex meta tags</h4>
+					<p>If your website’s pages aren’t coming up in Google’s index, you may have some kind of exclusion statements. Many times web developers will place an exclusion statement on a domain when they are building the website, and it is common for the developer to forget to remove the exclusion request. You will want to remove Robots.txt disallow codes any Noindex meta tags.</p>
+
+					<h5>Robots.txt Barriers to Indexing</h5>
+					<p>Generally, you will want to remove any Robots.txt that is a barrier to indexing, which includes code that disallows all pages to be indexed or that disallows specific pages.  However, there may be instances that you may want some pages to remain not indexed, such as when you have old coupons that you do not want user to find.  The following three examples show robots.txt codes for blocking all pages and blocking specific pages.</p>
+
+					<ul>
+						<li>
+							<h6>Disallowing (Blocking) all Pages</h6>
+							<p>An example Robots.txt that is good because it will encourage indexing and identify your XML Sitemap is as follows:</p>
+								<ul>
+									<li>User-Agent: *</li>
+									<li>Allow: /</li>
+									<li>sitemap: http://www.boostability.com/sitemap.xml</li>
+								</ul>
+						</li>
+						<li>
+							<h6>Disallowing (Blocking) Specific Pages</h6>
+							<p>This is an example of robots.txt that will block a specific page from being indexed:</p>
+								<ul>
+									<li>User-Agent: *</li>
+									<li>Disallow: /coupons-old</li>
+									<li>sitemap: http://www.boostability.com/sitemap.xml</li>
+								</ul>
+						</li>
+					</ul>
+
+					<h5>Noindex Meta Tag</h5>
+					<p>A noindex meta tag is the strongest request you can make to the search engines to not index a web page, and it looks like this:</p>
+
+					<p><code>&#60;META NAME="robots" CONTENT="noindex,nofollow"&#62;</code></p>
+
+					<p>After you have confirmed that the Robots.txt file is clear of disallow statements, you will next want to check for noindex meta tags on the website.</p>
+
+					<h5>Steps to Identifying Noindex Meta Tags</h5>
+					<p>The Noindex piece of HTML is going to be placed in the “head” of the code. In order to see the HTML of a page, follow these steps:</p>
+					<ol>
+						<li>Visit the website in FireFox.</li>
+						<li>After you are on the homepage, press Ctrl U.  This will bring up the HTML of the page.</li>
+						<li>Press Ctrl F. This will open of a “find” function in the search engines.</li>
+						<li>Type in “noindex.”</li>
+						<li>If the browser shows that there is noindex in the code, see if it is in the head of the HTML.  If it is, you have a noindex meta tag on the site.  This will make it so that page is NEVER indexed.</li>
+						<li>Talk to your webmaster to have the noindex meta tag deleted.</li>
+					</ol>
 				</section>
 
 				<section id="chapter_summary">
 					<h3>Chapter Summary</h3>
 					<ol>
-						<li>Your goal is to have your business highly ranked for Organic Search Results and Google Local.</li>
-						<li>Your page will show up on a search engine result only after it has been indexed.</li>
-						<li>Search engines can evaluate your code, the links from your site to others and the links from other sites to you.</li>
-						<li>Search engines give the most weight to the links or citations from other websites to yours.</li>
+						<li>Create an XML Sitemap to increase your odds of page inclusion.</li>
+						<li>Remove disallow codes from the Robots.txt to avoid page exclusion.</li>
+						<li>Delete noindex meta tags to avoid page exclusion.</li>
 					</ol>
 				</section>
 			</article>
